@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background: rgb(32, 43, 77);
+    color: rgb(255, 255, 255); 
+
+}
+
+.headerTxt {
+    font-size: 30px;
+}
