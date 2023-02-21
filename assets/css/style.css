@@ -7,9 +7,11 @@ body {
     background-attachment: fixed;
     background: rgb(32, 43, 77);
     color: rgb(255, 255, 255); 
-
+    font-family: quicksand;
 }
 
-.headerTxt {
-    font-size: 30px;
-}
+/* #weather-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
