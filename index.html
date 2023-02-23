@@ -11,7 +11,7 @@
 <body>
 
 
-<nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+<nav class="border-y-4 bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <a href="#" class="flex items-center">
       <img src="./assets/imgs/weatherLogo.png" class="md:h-16 mr-3 sm:h-9" alt="logo" />
@@ -19,7 +19,7 @@
   </a>
   <div class="flex md:order-2">
 
-    <form id="zip-code-form" class="text-blue-700">
+    <form id="zip-code" class="text-blue-700">
       <label for="zip-code-input">Enter your zip code:</label>
       <input type="text" id="zip-code-input">
       <button type="submit">Get Weather</button>
@@ -30,14 +30,55 @@
 
 
 <aside  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-transparent border-0 border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-   <div class="h-full px-3 pb-4 overflow-y-auto bg-transparent dark:bg-gray-800">
-      <h3 class="text-blue-700">Recents</h3>
+   <div class="border-x-4 h-full px-3 pb-4 overflow-y-auto bg-transparent dark:bg-gray-800">
+      <h3 class="text-blue-700 flex justify-center items-center mt-10">Recents</h3>
    </div>
 </aside>
 
 
-<div id="weather-display" class="flex justify-center items-center">
+<div  class="flex justify-center text-blue-700 items-center mt-10">
   
+</div>
+
+<div class="min-h-screen flex items-center justify-center -mt-40 -mb-40">
+  <div class="flex flex-col bg-white rounded p-4 w-full max-w-xs">
+              <div class="font-bold text-xl">Sydney</div>
+              <div class="text-sm text-gray-500">Thursday 10 May 2020</div>
+              <div class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-indigo-400 h-24 w-24">
+  <svg class="w-32 h-32" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+              </div>
+              <div class="flex flex-row items-center justify-center mt-6">
+                <div id="weather-display" class="font-medium text-blue-500 text-2xl"></div>
+                <div class="flex flex-col items-center ml-6">
+                  <div>Cloudy</div>
+                  <div class="mt-1">
+                    <span class="text-sm"><i class="far fa-long-arrow-up"></i></span>
+                    <span  class="text-sm font-light text-gray-500"></span>
+                  </div>
+                  <!-- <div>
+                    <span class="text-sm"><i class="far fa-long-arrow-down"></i></span>
+                    <span class="text-sm font-light text-gray-500">20°C</span>
+                  </div> -->
+                </div>
+              </div>
+              <div class="flex flex-row justify-between mt-6">
+                <div class="flex flex-col items-center">
+                  <div class="font-medium text-sm">Wind</div>
+                  <div class="text-sm text-gray-500">9k/h</div>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div class="font-medium text-sm">Humidity</div>
+                  <div class="text-sm text-gray-500">68%</div>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div class="font-medium text-sm">Visibility</div>
+                  <div class="text-sm text-gray-500">10km</div>
+                </div>
+              </div>
+            </div>
+  </div>
+
+
 </div>
 
   <script src="./assets/js/script.js"></script>

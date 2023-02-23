@@ -5,13 +5,11 @@ body {
     margin: 0;
     padding: 0;
     background-attachment: fixed;
-    background: rgb(32, 43, 77);
-    color: rgb(255, 255, 255); 
+    background-color: rgb(34, 34, 34);
+    background: linear-gradient(270deg,#d1d5db,#f6f6f6);    color: rgb(255, 255, 255); 
     font-family: quicksand;
+    border-style: solid;
+    
 }
 
-/* #weather-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+
