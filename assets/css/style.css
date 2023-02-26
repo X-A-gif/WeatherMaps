@@ -6,10 +6,29 @@ body {
     padding: 0;
     background-attachment: fixed;
     background-color: rgb(34, 34, 34);
-    background: linear-gradient(270deg,#d1d5db,#f6f6f6);    color: rgb(255, 255, 255); 
-    font-family: quicksand;
+    background: linear-gradient(270deg,#d1d5db,#f6f6f6); 
+    color: rgb(255, 255, 255); 
     border-style: solid;
-    
+    font-family: quicksand;
 }
 
+
+button {
+    background-color: #3c2c57; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px 8px 8px 8px;
+  }
+  
+  #location-list {
+    display: flex;
+    flex-direction: column;
+  }
 

@@ -77,10 +77,35 @@ function displayForecastData(forecastData) {
 
 const searchForm = document.getElementById('zip-code');
 const searchInput = document.getElementById('zip-code-input');
+const locationList = document.getElementById('location-list');
 
 searchForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const location = searchInput.value;
+
+  const storedLocations = JSON.parse(localStorage.getItem('locations') || '[]');
+  if (location && !storedLocations.includes(location)) {
+    storedLocations.push(location);
+    localStorage.setItem('locations', JSON.stringify(storedLocations));
+  }
+
+  locationList.innerHTML = '';
+  for (const storedLocation of storedLocations) {
+    const locationButton = document.createElement('button');
+    locationButton.textContent = storedLocation;
+    locationButton.addEventListener('click', async () => {
+      const weatherData = await getCurrentWeatherData(storedLocation);
+      console.log(weatherData);
+      displayWeatherData(weatherData);
+
+      const forecastData = await getForecastData(storedLocation);
+      console.log(forecastData);
+      displayForecastData(forecastData);
+    });
+    locationList.appendChild(locationButton);
+  }
+
+
   if (location) {
     const weatherData = await getCurrentWeatherData(location);
     console.log(weatherData);
@@ -92,27 +117,25 @@ searchForm.addEventListener('submit', async (event) => {
       
   }
 
-  localStorage.setItem('location', location);
+});
 
-  const storedLocation = localStorage.getItem('location');
-
-  if (storedLocation) {
+window.onload = () => {
+  const storedLocations = JSON.parse(localStorage.getItem('locations')) || [];
+  
+  storedLocations.forEach(async (location) => {
     const locationButton = document.createElement('button');
-    locationButton.textContent = storedLocation;
+    locationButton.textContent = location;
     
     locationButton.addEventListener('click', async () => {
-      const weatherData = await getCurrentWeatherData(storedLocation);
+      const weatherData = await getCurrentWeatherData(location);
       console.log(weatherData);
       displayWeatherData(weatherData);
   
-      const forecastData = await getForecastData(storedLocation);
+      const forecastData = await getForecastData(location);
       console.log(forecastData);
       displayForecastData(forecastData);
     });
     
-    const locationList = document.getElementById('location-list');
     locationList.appendChild(locationButton);
-  }
-
-});
-
+  });
+};
