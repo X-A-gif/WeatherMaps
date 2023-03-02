@@ -1,6 +1,7 @@
 const apiKey = '93fef6dd8cdc0c39fb43fb5114f937ca';
+
 const currentWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
-const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast/';
+const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 
 async function getCurrentWeatherData(location) {
   const url = `${currentWeatherUrl}?q=${location}&appid=${apiKey}&units=imperial`;
@@ -13,8 +14,8 @@ async function getCurrentWeatherData(location) {
   }
 }
 
-async function getForecastData(location) {
-  const url = `${forecastUrl}?q=${location}&appid=${apiKey}&units=imperial&cnt=5`;
+async function getForecastData(lat, lon) {
+  const url = `${forecastUrl}?q=${lat},${lon}&appid=${apiKey}&units=imperial`;
   try {
     const response = await fetch(url);
     const data = await response.json();
